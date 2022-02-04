@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>fhtml</string>
+		<string>vtl</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>(?x)
