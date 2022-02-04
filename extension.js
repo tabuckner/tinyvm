@@ -2,18 +2,32 @@ const vscode = require('vscode');
 const http = require('http');
 const fs = require('fs');
 const prettydiff = require('./lib/prettydiff');
+const editorSettings = vscode.workspace.getConfiguration('editor');
+const tabSize = editorSettings.tabSize;
+const wordWrapColumn = editorSettings.wordWrapColumn;
+const apacheVelocityConfig = vscode.workspace.getConfiguration('apache-velocity');
 
-let formatOptions = {
+let authorDefaults = {
     mode: 'beautify',
     html: true,
     lang: 'velocity',
     apacheVelocity: true,
     cssinsertlines: true,
-    wrap: 100,
     comments: 'indent',
     commline: false,
     style: 'indent',
 };
+
+let environmentDefaults = {
+    wrap: wordWrapColumn,
+    insize: tabSize,
+}
+
+let formatOptions = {
+    ...authorDefaults,
+    ...apacheVelocityConfig,
+    ...environmentDefaults,
+}
 
 function positionFactory(line, char) {
     return new vscode.Position(line, char);
@@ -62,5 +76,5 @@ function activate(context) {
 }
 exports.activate = activate;
 
-function deactivate() {}
+function deactivate() { }
 exports.deactivate = deactivate;

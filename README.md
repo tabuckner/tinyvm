@@ -15,6 +15,7 @@
 - syntaxes highlight
 - snippets
 - code beautify/formatting (Integrated with [prettydiff](http://prettydiff.com/))
+- Configurable Extension Settings for the bundled version of PrettyDiff
 
 ## Feedback
 

@@ -1,12 +1,12 @@
 {
     "name": "velocity",
     "displayName": "Apache Velocity",
-    "description": "The Apache Velocity support for Visual Studio Code",
-    "version": "0.7.1",
-    "publisher": "luqimin",
+    "description": "Updated Apache Velocity support for Visual Studio Code",
+    "version": "0.0.1",
+    "publisher": "tabuckner",
     "repository": {
         "type": "git",
-        "url": "https://github.com/luqimin/tinyvm"
+        "url": "https://github.com/tabuckner/tinyvm"
     },
     "engines": {
         "vscode": "^1.0.0"
@@ -51,7 +51,465 @@
                 "language": "velocity",
                 "path": "./snippets/snippets.json"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Apache Velocity",
+            "properties": {
+                "apache-velocity.apacheVelocity": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Provides support for Apache Velocity template language."
+                },
+                "apache-velocity.api": {
+                    "type": "string",
+                    "default": false,
+                    "description": "An enternal option to help identify environment specific needs."
+                },
+                "apache-velocity.attributetoken": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Provides markups attributes as separate tokens in the parse table of mode parse, otherwise attributes are a data property of their respective element."
+                },
+                "apache-velocity.brace_style": {
+                    "type": "string",
+                    "default": "none",
+                    "description": "Emulates JSBeautify's brace_style option using existing Pretty Diff options."
+                },
+                "apache-velocity.braceline": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true a new line character will be inserted after opening curly braces and before closing curly braces."
+                },
+                "apache-velocity.bracepadding": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Inserts a space after the start of a contain and before the end of the container in JavaScript if the contents of that container are not indented; such as: conditions, function arguments, and escaped sequences of template strings."
+                },
+                "apache-velocity.braces": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Determines if opening curly braces will exist on the same line as their condition or be forced onto a new line."
+                },
+                "apache-velocity.color": {
+                    "type": "string",
+                    "default": "white",
+                    "description": "The color scheme of the reports."
+                },
+                "apache-velocity.comments": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "This will determine whether comments should always start at position 0 of each line or if comments should be indented according to the code."
+                },
+                "apache-velocity.commline": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If a blank new line should be forced above comments in markup."
+                },
+                "apache-velocity.compressedcss": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If CSS should be beautified in a style where the properties and values are minifed for faster reading of selectors."
+                },
+                "apache-velocity.conditional": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true then conditional comments used by Internet Explorer are preserved at minification of markup."
+                },
+                "apache-velocity.content": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true and mode is 'diff' this will normalize all string literals in JavaScript to 'text' and all content in markup to 'text' so as to eliminate some differences from the HTML diff report."
+                },
+                "apache-velocity.context": {
+                    "type": "number",
+                    "default": -1,
+                    "description": "This shortens the diff output by allowing a specified number of equivalent lines between each line of difference."
+                },
+                "apache-velocity.correct": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Automatically correct some sloppiness in code."
+                },
+                "apache-velocity.crlf": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If line termination should be Windows (CRLF) format.  Unix (LF) format is the default."
+                },
+                "apache-velocity.cssinsertlines": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Inserts new line characters between every CSS code block."
+                },
+                "apache-velocity.csvchar": {
+                    "type": "string",
+                    "default": ",",
+                    "description": "The character to be used as a separator if lang is 'csv'.  Any string combination is accepted."
+                },
+                "apache-velocity.diff": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The code sample to be compared to 'source' option. This is required if mode is 'diff'."
+                },
+                "apache-velocity.diffcli": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true only text lines of the code differences are returned instead of an HTML diff report."
+                },
+                "apache-velocity.diffcomments": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true then comments will be preserved so that both code and comments are compared by the diff engine."
+                },
+                "apache-velocity.difflabel": {
+                    "type": "string",
+                    "default": "New Sample",
+                    "description": "This allows for a descriptive label for the diff file code of the diff HTML output."
+                },
+                "apache-velocity.diffspaceignore": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If white space only differences should be ignored by the diff tool."
+                },
+                "apache-velocity.diffview": {
+                    "type": "string",
+                    "default": "sidebyside",
+                    "description": "This determines whether the diff HTML output should display as a side-by-side comparison or if the differences should display in a single table column."
+                },
+                "apache-velocity.dustjs": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If the provided markup code is a Dust.js template."
+                },
+                "apache-velocity.elseline": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If elseline is true then the keyword 'else' is forced onto a new line in JavaScript beautification."
+                },
+                "apache-velocity.endcomma": {
+                    "type": "string",
+                    "default": "never",
+                    "description": "If there should be a trailing comma in JavaScript arrays and objects. Value \"multiline\" only applies to modes beautify and diff."
+                },
+                "apache-velocity.endquietly": {
+                    "type": "string",
+                    "default": "",
+                    "description": "A node only option to determine if terminal logging should be allowed or suppressed."
+                },
+                "apache-velocity.force_attribute": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If all markup attributes should be indented each onto their own line."
+                },
+                "apache-velocity.force_indent": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If lang is 'markup' this will force indentation upon all content and tags without regard for the creation of new text nodes."
+                },
+                "apache-velocity.formatArray": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "indent",
+                        "inline"
+                    ],
+                    "default": "default",
+                    "description": "Determines if all array indexes should be indented, never indented, or left to the default."
+                },
+                "apache-velocity.formatObject": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "indent",
+                        "inline"
+                    ],
+                    "default": "default",
+                    "description": "Determines if all object keys should be indented, never indented, or left to the default."
+                },
+                "apache-velocity.functionname": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If a space should follow a JavaScript function name."
+                },
+                "apache-velocity.help": {
+                    "type": "number",
+                    "default": 80,
+                    "description": "A node only option to print documentation to the console. The value determines where to wrap text."
+                },
+                "apache-velocity.html": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If lang is 'markup' this will provide extra support for HTML specific sloppiness."
+                },
+                "apache-velocity.inchar": {
+                    "type": "string",
+                    "default": " ",
+                    "description": "The string characters to comprise a single indentation. Any string combination is accepted."
+                },
+                "apache-velocity.inlevel": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "How much indentation padding should be applied to JavaScript beautification?"
+                },
+                "apache-velocity.insize": {
+                    "type": "number",
+                    "default": 2,
+                    "description": "The number of characters to comprise a single indentation."
+                },
+                "apache-velocity.jekyll": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If YAML Jekyll HTML template comments are supported."
+                },
+                "apache-velocity.jsscope": {
+                    "type": "string",
+                    "default": "none",
+                    "description": "An educational tool to generate HTML output of JavaScript code to identify scope regions and declared references by color."
+                },
+                "apache-velocity.jsx": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "An internal flag used to identify if a given code sample is React JSX code."
+                },
+                "apache-velocity.lang": {
+                    "type": "string",
+                    "default": "velocity",
+                    "description": "The programming language of the source file."
+                },
+                "apache-velocity.langdefault": {
+                    "type": "string",
+                    "default": "text",
+                    "description": "The fallback option if option 'lang' is set to 'auto' and a language cannot be detected."
+                },
+                "apache-velocity.listoptions": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "A Node.js only option that writes current option settings to the console."
+                },
+                "apache-velocity.methodchain": {
+                    "type": "string",
+                    "default": "indent",
+                    "description": "Whether consecutive JavaScript methods should be chained onto a single line of code instead of indented."
+                },
+                "apache-velocity.miniwrap": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether minified JavaScript should wrap after a specified character width.  This option requires a value from option 'wrap'."
+                },
+                "apache-velocity.mode": {
+                    "type": "string",
+                    "default": "beautify",
+                    "description": "The operation to be performed."
+                },
+                "apache-velocity.neverflatten": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If destructured lists in JavaScript should never be flattend."
+                },
+                "apache-velocity.newline": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Insert an empty line at the end of output."
+                },
+                "apache-velocity.nocaseindent": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If a case statement should receive the same indentation as the containing switch block."
+                },
+                "apache-velocity.nochainindent": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If indentation should be prevent of JavaScript method chains broken onto multiple lines."
+                },
+                "apache-velocity.nodeasync": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "An internal option manage processing of multiple files simultanously"
+                },
+                "apache-velocity.nodeerror": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "A Node.js only option if parse errors should be written to the console."
+                },
+                "apache-velocity.noleadzero": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether leading 0s in CSS values immediately preceeding a decimal should be removed or prevented."
+                },
+                "apache-velocity.objsort": {
+                    "type": "string",
+                    "default": "none",
+                    "description": "Sorts markup attributes and properties by key name in JavaScript and CSS."
+                },
+                "apache-velocity.output": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The path of the directory, if readmethod is value 'directory', or path and name of the file to write the output.  The path will be created or overwritten."
+                },
+                "apache-velocity.parseFormat": {
+                    "type": "string",
+                    "default": "parallel",
+                    "description": "Determines the output format for 'parse' mode."
+                },
+                "apache-velocity.parseSpace": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether whitespace tokens should be included."
+                },
+                "apache-velocity.preserve": {
+                    "type": "integer",
+                    "default": 2,
+                    "description": "The maximum number of consecutive empty lines to retain."
+                },
+                "apache-velocity.preserveComment": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Prevent comment reformatting due to option wrap."
+                },
+                "apache-velocity.qml": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enables QML syntax support in the jspretty library."
+                },
+                "apache-velocity.quote": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true and mode is 'diff' then all single quote characters will be replaced by double quote characters in both the source and diff file input so as to eliminate some differences from the diff report HTML output."
+                },
+                "apache-velocity.quoteConvert": {
+                    "type": "string",
+                    "enum": [
+                        "double",
+                        "none",
+                        "single"
+                    ],
+                    "default": "none",
+                    "description": "If the quotes of script strings or markup attributes should be converted to single quotes or double quotes."
+                },
+                "apache-velocity.readmethod": {
+                    "type": "string",
+                    "default": "auto",
+                    "description": "The readmethod determines how Node.js should receive input and output."
+                },
+                "apache-velocity.selectorlist": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If comma separated CSS selectors should be retained on a single line of code."
+                },
+                "apache-velocity.semicolon": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true and mode is 'diff' and lang is 'javascript' all semicolon characters that immediately preceed any white space containing a new line character will be removed so as to elimate some differences from the code comparison."
+                },
+                "apache-velocity.sourcelabel": {
+                    "type": "string",
+                    "default": "Source Sample",
+                    "description": "This allows for a descriptive label of the source file code of the diff HTML output."
+                },
+                "apache-velocity.space": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Inserts a space following the function keyword for anonymous functions."
+                },
+                "apache-velocity.spaceclose": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Markup self-closing tags end will end with ' />' instead of '/>'."
+                },
+                "apache-velocity.style": {
+                    "type": "string",
+                    "default": "indent",
+                    "description": "If mode is 'beautify' and lang is 'markup' or 'html' this will determine whether the contents of script and style tags should always start at position 0 of each line or if such content should be indented starting from the opening script or style tag."
+                },
+                "apache-velocity.styleguide": {
+                    "type": "string",
+                    "enum": [
+                        "airbnb",
+                        "crockford",
+                        "google",
+                        "jquery",
+                        "jslint",
+                        "mediawiki",
+                        "mrdoob",
+                        "none",
+                        "standard",
+                        "yandex"
+                    ],
+                    "default": "indent",
+                    "description": "Markup self-closing tags end will end with ' />' instead of '/>'."
+                },
+                "apache-velocity.summaryonly": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Node only option to output only number of differences."
+                },
+                "apache-velocity.tagmerge": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Allows immediately adjacement start and end markup tags of the same name to be combined into a single self-closing tag."
+                },
+                "apache-velocity.tagsort": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Sort child items of each respective markup parent element."
+                },
+                "apache-velocity.ternaryline": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If ternary operators in JavaScript (? and :) should remain on the same line."
+                },
+                "apache-velocity.textpreserve": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If text in the provided markup code should be preserved exactly as provided. This option eliminates beautification and wrapping of text content."
+                },
+                "apache-velocity.titanium": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Forces the JavaScript parser to parse Titanium Style Sheets instead of JavaScript."
+                },
+                "apache-velocity.topcoms": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If mode is 'minify' this determines whether comments above the first line of code should be kept."
+                },
+                "apache-velocity.twig": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If markuppretty is passing twig tag data to jspretty."
+                },
+                "apache-velocity.typescript": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Identifies certain edge cases where TypeScript is in conflict with React JSX regarding type generics"
+                },
+                "apache-velocity.unformatted": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If markup tags should have their insides preserved. This option is only available to markup and does not support child tokens that require a different lexer."
+                },
+                "apache-velocity.varword": {
+                    "type": "string",
+                    "default": "none",
+                    "description": "If consecutive JavaScript variables should be merged into a comma separated list or if variables in a list should be separated."
+                },
+                "apache-velocity.version": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "A Node.js only option to write the version information to the console."
+                },
+                "apache-velocity.vertical": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If lists of assignments and properties should be vertically aligned. This option is not used with the markup lexer."
+                },
+                "apache-velocity.wrap": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "Character width limit before applying word wrap. A 0 value disables this option. A negative value concatenates script strings."
+                }
+            }
+        }
     },
     "keywords": [
         "velocity",
